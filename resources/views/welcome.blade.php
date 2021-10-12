@@ -4,4 +4,8 @@
 
   @include('partials.home.slider')
 
+  @include('partials.home.avatar')
+
+  @include('partials.home.vedio')
+
 @endsection

@@ -1,3 +1,109 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.avatar {
+  width: 1100px;
+  height: 600px;
+  margin: auto;
+}
+
+.neck-pain,
+.shoulder-pain,
+.arm-front-pain,
+.liver-pain,
+.thigh-front-pain,
+.knee-pain,
+.leg-front-pain,
+.back-upper-pain,
+.back-lower-pain,
+.arm-back-pain,
+.hand-pain,
+.thigh-back-pain,
+.leg-back-pain,
+.foot-pain {
+  background-color: #e2211c;
+  width: 31px;
+  height: 31px;
+}
+
+.neck-pain {
+  top: 86px;
+  left: 223px;
+}
+
+.shoulder-pain {
+  top: 134px;
+  left: 295px;
+}
+
+.arm-front-pain {
+  top: 200px;
+  left: 356px;
+}
+
+.liver-pain {
+  top: 229px;
+  left: 209px;
+}
+
+.thigh-front-pain {
+  top: 365px;
+  left: 294px;
+}
+
+.knee-pain {
+  top: 417px;
+  left: 203px;
+}
+
+.leg-front-pain {
+  top: 499px;
+  left: 285px;
+}
+
+.back-upper-pain {
+  top: 108px;
+  left: 860px;
+}
+
+.back-lower-pain {
+  top: 224px;
+  left: 866px;
+}
+
+.back-lower-pain {
+  top: 224px;
+  left: 866px;
+}
+
+.arm-back-pain {
+  top: 193px;
+  left: 763px;
+}
+
+.hand-pain {
+  top: 251px;
+  left: 992px;
+}
+
+.thigh-back-pain {
+  top: 355px;
+  left: 831px;
+}
+
+.leg-back-pain {
+  top: 488px;
+  left: 902px;
+}
+
+.foot-pain {
+  top: 560px;
+  left: 826px;
+}
+
+.note-pain {
+  top: 0;
+  left: 453px;
+  width: 260px;
+}

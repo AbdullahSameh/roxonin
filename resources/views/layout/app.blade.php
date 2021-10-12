@@ -19,6 +19,7 @@
   <!-- Styles Libraries -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
 
   <!-- Styles -->
   <link href="{{ mix('css/app.css') }}" rel="stylesheet">
@@ -26,7 +27,7 @@
   @stack('css')
 </head>
 
-<body>
+<body class="bg-gray-50">
 
   <div id="app">
 
