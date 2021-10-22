@@ -2,7 +2,7 @@
 
 @section('content')
 
-  @include('partials.home.slider')
+  {{-- @include('partials.home.slider') --}}
 
   @include('partials.home.avatar')
 

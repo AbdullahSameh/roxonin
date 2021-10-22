@@ -1,9 +1,10 @@
 module.exports = {
+  mode: "jit",
   purge: [
     "./storage/framework/views/*.php",
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
-    "./resources/**/*.vue",
+    "./resources/**/*.vue"
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -14,13 +15,13 @@ module.exports = {
           sm: "2rem",
           lg: "4rem",
           xl: "8rem",
-          "2xl": "12rem",
-        },
+          "2xl": "12rem"
+        }
       },
       fontFamily: {
         "playfair-display": ["Playfair Display", "serif"],
         poppins: ["Poppins", "sans-serif"],
-        almarai: ["Almarai", "sans-serif"],
+        almarai: ["Almarai", "sans-serif"]
       },
       colors: {
         transparent: "transparent",
@@ -29,16 +30,18 @@ module.exports = {
         "text-color": "#454545",
         "logo-color": "#005da8",
         "background-color": "#e6e6e6",
-      },
-    },
+        "background2-color": "#5e96da",
+        "bod-color": "#0AC3C4"
+      }
+    }
   },
   variants: {
-    extend: {},
+    extend: {}
   },
   plugins: [
     require("@tailwindcss/forms"),
     // require('@tailwindcss/typography'),
     // require('@tailwindcss/aspect-ratio'),
-    require("tailwindcss-rtl"),
-  ],
+    require("tailwindcss-rtl")
+  ]
 };

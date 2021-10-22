@@ -3,127 +3,79 @@
   <nav>
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-16">
       <div class="relative flex items-center justify-between h-20 px-2.5">
-        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <div class="absolute inset-y-0 start-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->
-          <button type="button"
-            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+          <button type="button" id="mobileMenuToggale"
+            class="inline-flex items-center justify-center md:justify-start p-2 rounded-md text-head-color hover:text-white hover:bg-logo-color focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             aria-controls="mobile-menu" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
-            <!--
-          Icon when menu is closed.
 
-          Heroicon name: outline/menu
-
-          Menu open: "hidden", Menu closed: "block"
-        -->
-            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            {{-- <svg id="openMenu" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
               stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg> --}}
+
+            <svg id="openMenu" class="block h-6 w-6" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0 4.79398C0 4.13398 0.5352 3.59998 1.194 3.59998H10.806C11.1227 3.59998 11.4264 3.72577 11.6503 3.94969C11.8742 4.17361 12 4.47731 12 4.79398C12 5.11064 11.8742 5.41434 11.6503 5.63826C11.4264 5.86218 11.1227 5.98798 10.806 5.98798H1.194C0.877331 5.98798 0.573633 5.86218 0.349715 5.63826C0.125796 5.41434 0 5.11064 0 4.79398Z"
+                fill="#121212" />
+              <path
+                d="M0 12C0 11.34 0.5352 10.806 1.194 10.806H22.806C23.1227 10.806 23.4264 10.9318 23.6503 11.1557C23.8742 11.3796 24 11.6833 24 12C24 12.3166 23.8742 12.6203 23.6503 12.8443C23.4264 13.0682 23.1227 13.194 22.806 13.194H1.194C0.877331 13.194 0.573633 13.0682 0.349715 12.8443C0.125796 12.6203 0 12.3166 0 12Z"
+                fill="#121212" />
+              <path
+                d="M1.194 18.012C0.877331 18.012 0.573633 18.1378 0.349715 18.3617C0.125796 18.5856 0 18.8893 0 19.206C0 19.5226 0.125796 19.8263 0.349715 20.0502C0.573633 20.2742 0.877331 20.4 1.194 20.4H15.606C15.9227 20.4 16.2264 20.2742 16.4503 20.0502C16.6742 19.8263 16.8 19.5226 16.8 19.206C16.8 18.8893 16.6742 18.5856 16.4503 18.3617C16.2264 18.1378 15.9227 18.012 15.606 18.012H1.194Z"
+                fill="#121212" />
             </svg>
-            <!--
-          Icon when menu is open.
 
-          Heroicon name: outline/x
 
-          Menu open: "block", Menu closed: "hidden"
-        -->
-            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            <svg id="closeMenu" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
               stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
 
-        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex-1 flex items-center justify-center md:justify-start sm:justify-start">
           <div class="flex-shrink-0 flex items-center">
-            <img class="block lg:hidden h-12 w-auto" src="{{ asset('images/logo/logo.png') }}" alt="roxonin">
-            <img class="hidden lg:block h-12 w-auto" src="{{ asset('images/logo/logo.png') }}" alt="roxonin">
+            <a href="#">
+              <img class="h-20 w-auto" src="{{ asset('images/logo/logo.png') }}" alt="roxonin">
+            </a>
           </div>
-          {{-- sm:ml-6 --}}
-          <div class="flex-1 h-full hidden sm:block ltr:ml-6 sm:ms-6">
-            <div class="flex items-center justify-center m-2">
+
+          <div class="flex-1 h-20 hidden sm:block ltr:ms-6 sm:ms-6">
+            <div class="flex items-center justify-start h-full">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="#"
-                class="text-head-color hover:bg-logo-color hover:text-white px-2 lg:px-5 py-2 rounded-md text-sm lg:text-base uppercase font-medium"
-                aria-current="page">
+              <a href=""
+                class="nav-link relative inline-flex items-center text-head-color px-2 lg:px-5 py-2 h-full text-sm lg:text-base uppercase font-medium hover:text-logo-color transition duration-200 ease-in-out">
                 {{ __('messages.home') }}
               </a>
-
               <a href="#"
-                class="text-head-color hover:bg-logo-color hover:text-white px-2 lg:px-5 py-2 rounded-md text-sm lg:text-base uppercase font-medium">
+                class="nav-link relative inline-flex items-center text-head-color px-2 lg:px-5 py-2 h-full text-sm lg:text-base uppercase font-medium hover:text-logo-color transition duration-200 ease-in-out">
                 {{ __('messages.aboutUs') }}
               </a>
-
               <a href="#"
-                class="text-head-color hover:bg-logo-color hover:text-white px-2 lg:px-5 py-2 rounded-md text-sm lg:text-base uppercase font-medium">
+                class="nav-link relative inline-flex items-center text-head-color px-2 lg:px-5 py-2 h-full text-sm lg:text-base uppercase font-medium hover:text-logo-color transition duration-200 ease-in-out">
                 {{ __('messages.contact') }}
               </a>
             </div>
           </div>
         </div>
 
-        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-          <div class="ml-3 relative inline-block text-left">
+        <div class="absolute inset-y-0 end-0 flex items-center pe-2 sm:static sm:inset-auto sm:ms-6 sm:pe-0">
+          <div class="group ms-3 relative inline-block text-left">
             <div>
               <button type="button"
-                class="inline-flex justify-center w-full rounded-lg border border-background-color shadow-sm px-2 py-2 bg-background-color text-sm font-medium text-head-color hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-background-color"
+                class="inline-flex items-center justify-center md:justify-start w-full font-poppins rounded-lg border border-background-color shadow-sm px-2 py-2 bg-background-color text-sm font-medium text-head-color hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-background-color"
                 id="menu-button" aria-expanded="true" aria-haspopup="true">
                 @if (App::currentLocale() == 'ar')
-                  <svg class="md:ml-2" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M23.9773 11.8755V11.9357C23.9773 12.036 23.9773 12.1363 23.9773 12.2366V12.2968C23.9773 12.3971 23.9773 12.4974 23.9773 12.5776C23.9168 13.7612 23.7153 14.8845 23.3324 15.9477C23.2518 16.1684 23.1712 16.389 23.0906 16.6097C21.2972 20.9426 17.005 23.9918 12.0075 23.9918C10.3551 23.9918 8.80347 23.6708 7.37274 23.069C7.27199 23.0289 7.17123 22.9888 7.07048 22.9286C4.14856 21.6648 1.85133 19.2175 0.743019 16.2285C0.722868 16.1483 0.682566 16.0681 0.662414 15.9678C0.259392 14.8243 0.0377293 13.5806 0.0175781 12.3168V12.2567C0.0175781 12.1564 0.0175781 12.0561 0.0175781 11.9558V11.8956C0.0175781 11.8555 0.0175781 11.8153 0.0175781 11.7752V11.695C0.0175781 11.5947 0.0175781 11.5144 0.0377293 11.4141C0.0981827 10.0099 0.40045 8.66592 0.924379 7.4222C0.924379 7.3219 0.964681 7.2216 1.00498 7.14136C2.1939 4.45332 4.35007 2.28684 7.05032 1.06318C7.11078 1.02306 7.17123 1.003 7.23168 0.98294C8.68257 0.34102 10.2947 0 11.9874 0C16.7229 0 20.8337 2.74822 22.7682 6.7201C22.869 6.94076 22.9899 7.18148 23.0705 7.40214C23.5743 8.6258 23.8765 9.94976 23.9571 11.354C23.9571 11.4743 23.9571 11.5746 23.9773 11.695V11.7752C23.9773 11.8153 23.9773 11.8354 23.9773 11.8755Z"
-                      fill="#17C522" />
-                    <path
-                      d="M23.9792 11.8838V11.9439C23.9792 12.0442 23.9792 12.1445 23.9792 12.2448V12.305C23.9792 12.4053 23.9792 12.5056 23.9792 12.5859C23.9188 13.7694 23.7173 14.8928 23.3344 15.9559C23.2538 16.1766 23.1732 16.3973 23.0926 16.6179C21.2991 20.9509 17.0069 24 12.0095 24C10.3571 24 8.80543 23.679 7.3747 23.0772C7.27394 23.0371 7.17318 22.997 7.07243 22.9368C4.15051 21.673 1.85328 19.2257 0.744972 16.2368C0.724821 16.1565 0.684519 16.0763 0.664368 15.976C0.261345 14.8326 0.0396824 13.5889 0.0195312 12.3251V12.2649C0.0195312 12.1646 0.0195312 12.0643 0.0195312 11.964V11.9038L23.9792 11.8838Z"
-                      fill="#020202" />
-                    <path
-                      d="M23.9798 11.7773C23.9798 11.8175 23.9798 11.8576 23.9798 11.8776V11.9378C23.9798 12.0381 23.9798 12.1384 23.9798 12.2387V12.2989C23.9798 12.3992 23.9798 12.4995 23.9798 12.5797C23.9194 13.7633 23.7179 14.8866 23.335 15.9498H0.644836C0.241814 14.8064 0.0201511 13.5627 0 12.2989V12.2387C0 12.1384 0 12.0381 0 11.9378V11.8776C0 11.8375 0 11.7974 0 11.7573V11.677C0 11.5767 0 11.4965 0.0201511 11.3962C0.0806045 9.99201 0.382872 8.64799 0.906801 7.40427H23.0932C23.597 8.62793 23.8992 9.95189 23.9798 11.3561C23.9798 11.4764 23.9798 11.5767 24 11.6971V11.7773H23.9798Z"
-                      fill="white" />
-                    <path
-                      d="M7.05228 1.06378V22.9693C4.15051 21.6654 1.85328 19.2181 0.744972 16.2291C0.724821 16.1489 0.684519 16.0687 0.664368 15.9684C0.261345 14.8249 0.0396824 13.5812 0.0195312 12.3174V12.2573C0.0195312 12.157 0.0195312 12.0567 0.0195312 11.9564V11.8962C0.0195312 11.8561 0.0195312 11.8159 0.0195312 11.7758V11.6956C0.0598335 10.1911 0.362101 8.74676 0.906181 7.4228C0.926332 7.3225 0.966635 7.2222 1.00694 7.14196C2.19585 4.45392 4.37218 2.26738 7.05228 1.06378Z"
-                      fill="#ED0000" />
-                  </svg>
+                  @include('layout.flags.ar')
 
-                  <span class="hidden md:inline">العربية</span>
+                  <span class="hidden md:inline">AR</span>
                 @else
+                  @include('layout.flags.en')
 
-                  <svg class="md:mr-2" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0)">
-                      <path
-                        d="M23.9994 11.7713V11.831C23.9994 11.9304 23.9994 12.0298 23.9994 12.1292V12.1889C23.9994 12.2883 23.9994 12.3679 23.9792 12.4673C23.9792 12.5667 23.9591 12.6661 23.9591 12.7655C23.9389 13.0638 23.8986 13.3621 23.8583 13.6603C23.7979 14.058 23.7173 14.4557 23.6165 14.8534C23.5359 15.1516 23.4553 15.43 23.3545 15.7283C23.3545 15.7481 23.3344 15.7879 23.3344 15.8078V15.8277C23.3142 15.9072 23.2739 15.9867 23.2336 16.0663C23.1933 16.1657 23.1732 16.2651 23.1329 16.3645C23.1127 16.4043 23.1127 16.4441 23.0926 16.4838C22.8306 17.1003 22.5283 17.6968 22.1656 18.2336C21.9037 18.6512 21.6215 19.029 21.3193 19.4068C21.1581 19.6056 20.9767 19.8045 20.7953 20.0033C19.284 21.6139 17.3294 22.807 15.1329 23.4035V24H8.34195V23.2643C7.99938 23.1649 7.67696 23.0456 7.35454 22.9064C7.25379 22.8666 7.15303 22.8268 7.05228 22.7672C5.58124 22.111 4.29157 21.1765 3.20341 20.0232C3.0825 19.9039 2.98175 19.7846 2.88099 19.6653C2.51827 19.2477 2.19585 18.8103 1.89359 18.3728C1.63162 17.9751 1.38981 17.5576 1.1883 17.1201C1.06739 16.8815 0.966635 16.6429 0.865879 16.4043C0.825577 16.3049 0.785274 16.1856 0.744972 16.0862C0.724821 16.0066 0.684519 15.9271 0.664367 15.8476V15.8277C0.664367 15.8078 0.644216 15.768 0.644216 15.7481C0.543461 15.4698 0.462856 15.1715 0.382252 14.8732C0.281496 14.4756 0.200891 14.0779 0.140438 13.6802C0.100136 13.4018 0.0598335 13.1234 0.0598335 12.865C0.0598335 12.7655 0.0396824 12.686 0.0396824 12.5866C0.0396824 12.4673 0.0396824 12.348 0.0195312 12.2088V12.1491C0.0195312 12.0497 0.0195312 11.9503 0.0195312 11.8509V11.7912C0.0195312 11.7515 0.0195312 11.7117 0.0195312 11.6918V11.6123C0.0195312 11.5526 0.0195312 11.4731 0.0195312 11.3935C0.0195312 11.3737 0.0195312 11.3538 0.0195312 11.314C0.0195312 11.1549 0.0396824 10.9959 0.0396824 10.8567V10.8368C0.0396824 10.8169 0.0396824 10.797 0.0396824 10.7771C0.0598335 10.6181 0.0799846 10.459 0.100136 10.3198C0.100136 10.2999 0.100136 10.2601 0.100136 10.2403C0.120287 10.121 0.140438 10.0017 0.160589 9.88235C0.18074 9.72328 0.221043 9.56421 0.241194 9.42502V9.40514C0.281496 9.24607 0.321798 9.10688 0.3621 8.94781C0.3621 8.92792 0.3621 8.90804 0.382252 8.88815C0.402403 8.78873 0.442705 8.68931 0.462856 8.57001C0.483007 8.47059 0.503158 8.39105 0.543461 8.31152C0.543461 8.27175 0.563612 8.25186 0.583763 8.2121C0.624065 8.07291 0.684519 7.91384 0.744972 7.77465C0.765123 7.73488 0.765123 7.69511 0.785274 7.65534C0.785274 7.63546 0.785274 7.63546 0.805425 7.61558C0.825577 7.53604 0.865879 7.47639 0.88603 7.39685C0.88603 7.39685 0.88603 7.37697 0.906181 7.37697C0.926332 7.25766 0.966635 7.15824 1.00694 7.07871C1.02709 7.01906 1.04724 6.9594 1.08754 6.89975C1.28905 6.4623 1.51072 6.04474 1.77268 5.62717C2.15555 5.03065 2.57873 4.4739 3.0422 3.93703C4.17066 2.72411 5.52079 1.72991 7.05228 1.05385C7.11273 1.01408 7.17318 0.994201 7.23364 0.974317C7.59636 0.815244 7.95908 0.676056 8.34195 0.556752C8.72482 0.437448 9.12784 0.338028 9.53087 0.238608C9.53087 0.238608 9.55102 0.238608 9.57117 0.238608C10.3571 0.0795361 11.1631 0 11.9893 0C12.6341 0 13.2991 0.059652 13.9238 0.159072C13.9238 0.159072 13.9238 0.159072 13.944 0.159072C14.347 0.218724 14.75 0.29826 15.1329 0.417564C17.41 1.01408 19.4251 2.28666 20.9566 3.9768C21.1379 4.17564 21.2991 4.37448 21.4603 4.57332C21.7626 4.95112 22.0246 5.3488 22.2865 5.74648C22.4679 6.04474 22.6291 6.343 22.7903 6.66114C22.9112 6.87987 23.012 7.11848 23.0926 7.3372C23.0926 7.3372 23.0926 7.35708 23.1127 7.35708C23.1329 7.43662 23.1732 7.49627 23.1933 7.57581C23.1933 7.59569 23.2135 7.61558 23.2135 7.63546C23.2336 7.67523 23.2336 7.715 23.2538 7.73488C23.3142 7.87407 23.3545 8.01326 23.3948 8.17233C23.4754 8.41094 23.5561 8.66943 23.6165 8.90804C23.6367 8.98757 23.6568 9.04722 23.677 9.12676C23.6971 9.2063 23.7173 9.28583 23.7173 9.36537C23.7576 9.50456 23.7777 9.64375 23.7979 9.78293C23.818 9.86247 23.818 9.92212 23.8382 10.0017C23.8583 10.121 23.8785 10.2204 23.8785 10.3397C23.8986 10.4789 23.8986 10.5982 23.9188 10.7374C23.9389 10.8964 23.9389 11.0754 23.9591 11.2543C23.9591 11.2941 23.9591 11.3339 23.9591 11.3737C23.9591 11.4532 23.9591 11.5128 23.9792 11.5924V11.6719C23.9994 11.7117 23.9994 11.7316 23.9994 11.7713Z"
-                        fill="#3151AA" />
-                      <path
-                        d="M22.166 18.2522C21.904 18.6697 21.6219 19.0475 21.3196 19.4253L21.2793 19.4054L21.2592 19.3856L21.098 19.2861L20.9368 19.1867L20.8562 19.1271L20.574 18.9481L20.5337 18.9282L20.2113 18.7294L15.1735 15.6076L14.0249 14.8918L13.9846 14.8719H13.9645L12.7554 14.1163L12.0501 13.6789L10.7604 12.8835L9.57152 12.1478H9.55137H9.53122L9.39016 12.0484L8.64457 11.591L8.3423 11.4121L5.09797 9.3839L3.16346 8.19086L2.63953 7.87272L2.29696 7.65399L2.01484 7.47504L1.91409 7.41539H1.89394L1.69242 7.29608L1.37001 7.09724L1.22895 6.99782L1.14834 6.93817L1.10804 6.91828L1.08789 6.8984C1.2894 6.46095 1.51106 6.04339 1.77303 5.62582L1.81333 5.64571L1.85363 5.66559L1.91409 5.70536L2.09545 5.82466L2.41787 6.0235L2.45817 6.04339L2.57907 6.12292L2.59923 6.14281L2.67983 6.20246L2.78059 6.26211L2.88134 6.32176L3.74784 6.85863L4.49343 7.31597L4.63449 7.3955L5.90401 8.17098L7.83852 9.36402L8.36245 9.68216L9.55137 10.4179L9.57152 10.4378H9.59167L10.0551 10.7161L10.8007 11.1735L12.171 12.0086L13.9443 13.1221H13.9645L14.1458 13.2414L14.8108 13.6391L15.1735 13.8578L16.7453 14.8321L21.098 17.5165L21.4002 17.6954L21.4204 17.7153L21.7025 17.8943L21.8234 17.9738L21.9645 18.0533L22.1458 18.1528L22.166 18.1726V18.2522Z"
-                        fill="#F42525" />
-                      <path
-                        d="M22.2871 5.74524L22.2669 5.76513L22.2266 5.78501L22.1259 5.84466L21.9445 5.94408L21.7027 6.10316H21.6825L21.5616 6.18269L21.5415 6.20258L21.4609 6.26223L21.4206 6.28211L20.7556 6.69968L19.5264 7.45527L19.2241 7.65411L19.1233 7.71376L18.3576 8.19098L16.4231 9.38402L15.1334 10.1794L14.1259 10.7958L13.9445 10.9151H13.9243L12.151 12.0286L10.7808 12.8637L10.0352 13.3211L9.5717 13.5994H9.55155L9.5314 13.6193L9.47095 13.679L8.34248 14.3749L7.53644 14.872L3.02259 17.6757L2.76062 17.8347H2.74047L2.4382 18.0336L2.25684 18.1529L2.11579 18.2324L1.97473 18.3318L1.95458 18.3517L1.91427 18.3716C1.65231 17.9739 1.4105 17.5563 1.20898 17.1189L1.22914 17.099L1.24929 17.0791L1.4105 16.9797L1.51125 16.9201L1.73291 16.7809L2.03518 16.6019L2.05533 16.582L2.29715 16.423L4.81604 14.8521L6.75055 13.6591L8.36264 12.6649L8.6649 12.4859L9.41049 12.0286L9.55155 11.9292L9.5717 11.9093H9.59185L10.7808 11.1736L12.7757 9.94077L13.7027 9.36413L13.9243 9.22495L13.9445 9.20506L15.1536 8.46935L15.6372 8.17109L18.1561 6.60026L18.277 6.52072L18.6196 6.302L20.5944 5.06919L20.6951 5.00953L20.7153 4.98965L20.8563 4.91011L20.9974 4.83058L21.0578 4.79081L21.1385 4.75104L21.2392 4.69139L21.34 4.63174L21.4004 4.59197L21.4407 4.5522L21.4609 4.53232C21.7631 4.94988 22.0453 5.34756 22.2871 5.74524Z"
-                        fill="#F42525" />
-                      <path
-                        d="M24 11.7726V11.8323C24 11.9317 24 12.0311 24 12.1305V12.1902C24 12.2896 24 12.3692 23.9798 12.4686C23.9798 12.568 23.9597 12.6674 23.9597 12.7668C23.9395 13.0651 23.8992 13.3634 23.8589 13.6616C23.7985 14.0593 23.7179 14.457 23.6171 14.8547H0.36272C0.261965 14.457 0.18136 14.0593 0.120907 13.6616C0.0806045 13.3832 0.0403023 13.1049 0.0403023 12.8464C0.0403023 12.747 0.0201511 12.6674 0.0201511 12.568C0.0201511 12.4487 0.0201511 12.3294 0 12.1902V12.1305C0 12.0311 0 11.9317 0 11.8323V11.7726C0 11.7329 0 11.6931 0 11.6732V11.5937C0 11.534 0 11.4545 0 11.375C0 11.3551 0 11.3352 0 11.2954C0 11.1363 0.0201511 10.9773 0.0201511 10.8381V10.8182C0.0201511 10.7983 0.0201511 10.7784 0.0201511 10.7586C0.0403023 10.5995 0.0604534 10.4404 0.0806045 10.3012C0.0806045 10.2813 0.0806045 10.2416 0.0806045 10.2217C0.100756 10.1024 0.120907 9.98307 0.141058 9.86377C0.161209 9.7047 0.201511 9.54563 0.221662 9.40644V9.38655C0.261965 9.22748 0.302267 9.08829 0.342569 8.92922C0.342569 8.90934 0.342569 8.88945 0.36272 8.86957C0.382872 8.77015 0.423174 8.67073 0.443325 8.55142C0.463476 8.452 0.483627 8.37247 0.523929 8.29293C0.523929 8.25316 0.544081 8.23328 0.564232 8.19351H23.3753C23.4559 8.43212 23.5365 8.69061 23.597 8.92922C23.6171 9.00876 23.6373 9.06841 23.6574 9.14794C23.6776 9.22748 23.6977 9.30702 23.6977 9.38655C23.738 9.52574 23.7582 9.66493 23.7783 9.80412C23.7985 9.88365 23.7985 9.94331 23.8186 10.0228C23.8388 10.1421 23.8589 10.2416 23.8589 10.3609C23.8791 10.5001 23.8791 10.6194 23.8992 10.7586C23.9194 10.9176 23.9194 11.0966 23.9395 11.2755C23.9395 11.3153 23.9395 11.3551 23.9395 11.3948C23.9395 11.4744 23.9395 11.534 23.9597 11.6136V11.6931C24 11.713 24 11.7329 24 11.7726Z"
-                        fill="white" />
-                      <path
-                        d="M24 11.7707V11.8304C24 11.9298 24 12.0292 24 12.1286V12.1883C24 12.2877 24 12.3672 23.9798 12.4666C23.9798 12.5661 23.9597 12.6655 23.9597 12.7649C23.9395 13.0632 23.8992 13.3614 23.8589 13.6597H0.120907C0.0806045 13.3813 0.0403023 13.1029 0.0403023 12.8444C0.0403023 12.745 0.0201511 12.6655 0.0201511 12.5661C0.0201511 12.4468 0.0201511 12.3275 0 12.1883V12.1286C0 12.0292 0 11.9298 0 11.8304V11.7707C0 11.7309 0 11.6912 0 11.6713V11.5917C0 11.5321 0 11.4526 0 11.373C0 11.3531 0 11.3333 0 11.2935C0 11.1344 0.0201511 10.9753 0.0201511 10.8362V10.8163C0.0201511 10.7964 0.0201511 10.7765 0.0201511 10.7566C0.0403023 10.5975 0.0604534 10.4385 0.0806045 10.2993C0.0806045 10.2794 0.0806045 10.2396 0.0806045 10.2198C0.100756 10.1005 0.120907 9.98115 0.141058 9.86184C0.161209 9.70277 0.201511 9.5437 0.221662 9.40451H23.6776C23.7179 9.5437 23.738 9.68289 23.7582 9.82207C23.7783 9.90161 23.7783 9.96126 23.7985 10.0408C23.8186 10.1601 23.8388 10.2595 23.8388 10.3788C23.8589 10.518 23.8589 10.6373 23.8791 10.7765C23.8992 10.9356 23.8992 11.1145 23.9194 11.2935C23.9194 11.3333 23.9194 11.373 23.9194 11.4128C23.9194 11.4923 23.9194 11.552 23.9395 11.6315V11.7111C24 11.7111 24 11.7309 24 11.7707Z"
-                        fill="#F42525" />
-                      <path
-                        d="M13.9249 0.159072V24H9.57227V0.238608C10.3582 0.0795361 11.1642 0 11.9904 0C12.6554 0 13.3002 0.059652 13.9249 0.159072Z"
-                        fill="#CD002A" />
-                      <path
-                        d="M15.1327 0.417564V8.19221H13.9237V14.8732H15.1327V24H8.3418V14.8732H9.55086V8.19221H8.3418V0.556752C8.72467 0.437448 9.12769 0.338028 9.53071 0.238608C9.53071 0.238608 9.55086 0.238608 9.57102 0.238608C10.3569 0.0795361 11.163 0 11.9892 0C12.634 0 13.299 0.059652 13.9237 0.159072C13.9237 0.159072 13.9237 0.159072 13.9438 0.159072C14.3468 0.218724 14.7297 0.29826 15.1327 0.417564Z"
-                        fill="white" />
-                      <path
-                        d="M13.9444 0.159072V24H9.53125V0.238608C9.53125 0.238608 9.5514 0.238608 9.57155 0.238608C10.3574 0.0795361 11.1635 0 11.9897 0C12.6547 0 13.2995 0.059652 13.9444 0.159072C13.9242 0.159072 13.9242 0.159072 13.9444 0.159072Z"
-                        fill="#F42525" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0">
-                        <rect width="24" height="24" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-
-                  <span class="hidden md:inline">English</span>
+                  <span class="hidden md:inline">EN</span>
                 @endif
                 <!-- Heroicon name: solid/chevron-down -->
                 <svg class="-me-1 ms-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -135,55 +87,36 @@
               </button>
             </div>
 
-            <!--
-          Dropdown menu, show/hide based on menu state.
-
-          Entering: "transition ease-out duration-100"
-            From: "transform opacity-0 scale-95"
-            To: "transform opacity-100 scale-100"
-          Leaving: "transition ease-in duration-75"
-            From: "transform opacity-100 scale-100"
-            To: "transform opacity-0 scale-95"
-        -->
             <div
-              class="opacity-0 origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+              class="origin-top-right absolute end-0 mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10 transition-all opacity-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-1"
               role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
               <div class="py-1" role="none">
                 <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
-                  id="menu-item-0">Account settings</a>
-                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
-                  id="menu-item-1">Support</a>
-                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
-                  id="menu-item-2">License</a>
-                <form method="POST" action="#" role="none">
-                  <button type="submit" class="text-gray-700 block w-full text-left px-4 py-2 text-sm" role="menuitem"
-                    tabindex="-1" id="menu-item-3">
-                    Sign out
-                  </button>
-                </form>
+                @if (App::currentLocale() == 'ar')
+                  <a href="#"
+                    class="flex items-center justify-center md:justify-start text-text-color px-4 py-2 text-sm"
+                    role="menuitem" tabindex="-1" id="menu-item-0">
+                    <img class="md:me-2 w-5 h-5" src="{{ asset('images/icons/flag_english.svg') }}"
+                      alt="flag_english">
+                    <span class="hidden md:inline">EN</span>
+                  </a>
+                @else
+                  <a href="#"
+                    class="flex items-center justify-center md:justify-start text-text-color px-4 py-2 text-sm"
+                    role="menuitem" tabindex="-1" id="menu-item-0">
+                    <img class="md:me-2 w-5 h-5" src="{{ asset('images/icons/flag_uae.svg') }}" alt="flag_uae">
+                    <span class="hidden md:inline">AR</span>
+                  </a>
+                @endif
               </div>
             </div>
           </div>
+          <button
+            class=" hidden lg:block items-center ms-3 px-10 py-3 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-400 rounded-xl hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            Contact Us
+          </button>
+
         </div>
-      </div>
-    </div>
-
-    <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="hidden sm:hidden" id="mobile-menu">
-      <div class="px-2 pt-2 pb-3 space-y-1">
-        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-          aria-current="page">Dashboard</a>
-
-        <a href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
-
-        <a href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-
-        <a href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
       </div>
     </div>
   </nav>

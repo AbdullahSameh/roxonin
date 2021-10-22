@@ -10,6 +10,9 @@
 
   <title>{{ config('app.name', 'Laravel') }}</title>
 
+  <!-- Favicons Icon -->
+  <link rel="icon" href="{{ asset('images/icons/icon.png') }}" type="image/x-icon" />
+
   <!-- Fonts -->
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -27,7 +30,7 @@
   @stack('css')
 </head>
 
-<body class="bg-gray-50">
+<body id="body" dir="{{ App::currentLocale() == 'ar' ? 'rtl' : 'ltr' }}" class="bg-gray-50">
 
   <div id="app">
 
@@ -37,21 +40,17 @@
     @yield('content')
     <!-- ./content -->
 
+    @include('layout.footer')
   </div>
   <!-- #/app -->
 
 
+  @include('layout.mobile-menu')
+
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
   <script src="{{ mix('js/app.js') }}"></script>
-  <script>
-    new Splide('#homeSlider', {
-      type: 'loop',
-      arrows: false,
-      autoplay: true,
-      interval: 4000,
-    }).mount();
-  </script>
+  <script src="{{ mix('js/script.js') }}"></script>
 </body>
 
 </html>

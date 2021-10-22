@@ -1,4 +1,10 @@
-<div id="homeSlider" class="splide" dir="ltr">
+{{-- <section class="wellcom">
+  <div>
+    <img class=" object-cover object-center w-full" src="{{ asset('images/slider/banner.png') }}" alt="roxonin-banner">
+  </div>
+</section> --}}
+
+{{-- <div id="homeSlider" class="splide" dir="ltr">
   <div class="splide__track">
     <ul class="splide__list">
       <li class="splide__slide">
@@ -24,4 +30,4 @@
 
     </ul>
   </div>
-</div>
+</div> --}}
